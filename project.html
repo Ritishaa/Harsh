@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Xamwinner - Home</title>
   </head>
   <body>
@@ -34,42 +35,42 @@
           </form>
           <ul class="navbar-nav mr-auto">
             <li class="dropdown nav-link">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Prepare for <b class="caret"></b></a>
+              <a onclick="topbutton1()" href="#" class="dropdown-toggle" data-toggle="dropdown">Prepare for <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a onclick="insideOptions()" href="#">Action</a></li>
+                <li><a onclick="insideOptions()" href="#">Another action</a></li>
+                <li><a onclick="insideOptions()" href="#">Something else here</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+                <li><a onclick="insideOptions()" href="#">Separated link</a></li>
                 <li class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a onclick="insideOptions()" href="#">One more separated link</a></li>
               </ul>
             </li>
             <li class="dropdown nav-link">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contest & Win <b class="caret"></b></a>
+              <a onclick="topbutton2()" href="#" class="dropdown-toggle" data-toggle="dropdown">Contest & Win <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a onclick="insideOptions()" href="#">Action</a></li>
+                <li><a onclick="insideOptions()" href="#">Another action</a></li>
+                <li><a onclick="insideOptions()" href="#">Something else here</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+                <li><a onclick="insideOptions()" href="#">Separated link</a></li>
                 <li class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a onclick="insideOptions()" href="#">One more separated link</a></li>
               </ul>
             </li>
             <li class="nav-item vf" style="padding-top: 3px;">
               <a class="nav-link" href="#">Our Specials</a>
             </li>
             <li class="dropdown nav-link">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Latest News <b class="caret"></b></a>
+              <a onclick="topbutton3()" href="#" class="dropdown-toggle" data-toggle="dropdown">Latest News <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a onclick="insideOptions()" href="#">Action</a></li>
+                <li><a onclick="insideOptions()" href="#">Another action</a></li>
+                <li><a onclick="insideOptions()" href="#">Something else here</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+                <li><a onclick="insideOptions()" href="#">Separated link</a></li>
                 <li class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a onclick="insideOptions()" href="#">One more separated link</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -237,7 +238,11 @@
 </footer>
   
   <script>
-    var count = 0
+    var count = 0;
+    var count1 = 0;
+    var count2 = 0;
+    var count3 = 0;
+    
 
     document.getElementsByTagName("BODY")[0].onresize = function(){
       var size = window.innerWidth;
@@ -252,9 +257,65 @@
         if(count %2 ==0){
         document.getElementById("vertical-bar").style.top = "85px";
         }
+
+        if(count1 %2 !=0){
+          document.getElementById("vertical-bar").style.top = "467px";
+        }
+
+        if(count2 %2 !=0){
+          document.getElementById("vertical-bar").style.top = "467px";
+        }
+
+        if(count3 %2 !=0){
+          document.getElementById("vertical-bar").style.top = "467px";
+        }
       }
 
     }
+
+    function insideOptions(){
+      document.getElementById("vertical-bar").style.top = "337px";
+      count1 = 0;
+      count2 = 0;
+      count3 = 0;
+    }
+    
+    function topbutton1(){
+     count2 = 0;
+     count3 = 0;
+     count1 = count1 + 1;
+   if (count1 % 2 != 0) {
+     document.getElementById("vertical-bar").style.top = "467px";
+
+   }
+   if (count1 % 2 == 0) {
+     document.getElementById("vertical-bar").style.top = "337px";
+   }
+ }
+
+   function topbutton2(){
+     count1 = 0;
+     count3 = 0;
+     count2 = count2 + 1;
+   if (count2 % 2 != 0) {
+     document.getElementById("vertical-bar").style.top = "467px";
+   }
+   if (count2 % 2 == 0) {
+     document.getElementById("vertical-bar").style.top = "337px";
+   }
+ }
+
+   function topbutton3(){
+     count1 = 0;
+     count2 = 0;
+     count3 = count3 + 1;
+   if (count3 % 2 != 0) {
+     document.getElementById("vertical-bar").style.top = "467px";
+   }
+   if (count3 % 2 == 0) {
+     document.getElementById("vertical-bar").style.top = "337px";
+   }
+ }
 
     function openTopPanel(){
 
@@ -265,10 +326,7 @@
    if (count % 2 == 0) {
      document.getElementById("vertical-bar").style.top = "85px";
    }
-
-
-
-    }
+  }
 
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
