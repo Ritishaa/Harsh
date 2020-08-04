@@ -274,13 +274,18 @@
     }
 
     function insideOptions(){
+      var size = window.innerWidth;
+      if (size <=769){
       document.getElementById("vertical-bar").style.top = "337px";
       count1 = 0;
       count2 = 0;
       count3 = 0;
     }
+    }
     
     function topbutton1(){
+      var size = window.innerWidth;
+      if (size<=769){
      count2 = 0;
      count3 = 0;
      count1 = count1 + 1;
@@ -292,8 +297,11 @@
      document.getElementById("vertical-bar").style.top = "337px";
    }
  }
+ }
 
    function topbutton2(){
+    var size = window.innerWidth;
+    if(size<=769){
      count1 = 0;
      count3 = 0;
      count2 = count2 + 1;
@@ -304,8 +312,11 @@
      document.getElementById("vertical-bar").style.top = "337px";
    }
  }
+ }
 
    function topbutton3(){
+    var size = window.innerWidth;
+    if(size<=769){
      count1 = 0;
      count2 = 0;
      count3 = count3 + 1;
@@ -315,6 +326,7 @@
    if (count3 % 2 == 0) {
      document.getElementById("vertical-bar").style.top = "337px";
    }
+ }
  }
 
     function openTopPanel(){
